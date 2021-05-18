@@ -8,17 +8,6 @@ public class App {
         Shop shop = new Shop();
         List<ShopItem> shopItems = shop.getStartedPack();
 
-       /* List<Comparator<ItemSorters>> comparatorsList = new LinkedList<>();
-
-        Compare sortByCategory = ItemSorters.SortByCategory::compare;
-        Compare sortByTitle = ItemSorters::sortByTitle;
-        Compare sortByPrice = ItemSorters::sortByPrice;
-        Compare sortByQuantity = ItemSorters::sortByQuantity;
-
-        comparatorsList.add(sortByCategory);
-        comparatorsList.add(sortByQuantity);
-*/
-
         Collections.sort(shopItems, new ItemSorters.SortByCategory());
         System.out.println(shopItems.toString());
         System.out.println("-----------------");

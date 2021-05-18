@@ -1,18 +1,28 @@
 package org.apache.commons;
 
 import java.util.Comparator;
+import org.apache.log4j.Logger;
 
 public class ItemSorters {
+static  final Logger log = Logger.getLogger(ItemSorters.class);
+
+
+   //  static final Logger log = Logger.getLogger(String.valueOf(ItemSorters.class));
+
 
     static class SortByCategory implements Comparator<ShopItem> {
+
         @Override
         public  int compare(ShopItem o1, ShopItem o2) {
             return o1.category.compareTo(o2.category);
         }
+
+
+        {
+            log.info("sort by category");
+        }
     }
- /*   static int sortByCategory(ShopItem item1, ShopItem item2) {
-        return item1.category.compareTo(item2.category);
-    }*/
+
 
 
     static class SortByTitle implements Comparator<ShopItem>{
@@ -21,11 +31,13 @@ public class ItemSorters {
         public int compare(ShopItem o1, ShopItem o2) {
             return o1.name.compareToIgnoreCase(o2.name);
         }
+
+        {
+            log.info("sort by title");
+        }
     }
 
-   /* static int sortByTitle(ShopItem item1, ShopItem item2) {
-        return item1.name.compareTo(item2.name);
-    }*/
+
 
 
     static class SortByPrice implements Comparator<ShopItem>{
@@ -34,11 +46,14 @@ public class ItemSorters {
         public int compare(ShopItem o1, ShopItem o2) {
             return o1.priceToString().compareTo(o2.priceToString());
         }
+
+        {
+            log.info("sort by price");
+        }
     }
 
-/* static int sortByPrice(ShopItem item1, ShopItem item2) {
-        return item1.priceToString().compareTo(item2.priceToString());
-    }*/
+
+
 
 
     static class SortByQuantity implements Comparator<ShopItem>{
@@ -46,11 +61,12 @@ public class ItemSorters {
         public int compare(ShopItem o1, ShopItem o2) {
             return o1.quantityToString().compareTo(o2.quantityToString());
         }
+
+        {
+            log.info("sort by quantity");
+        }
     }
 
-/*    static int sortByQuantity(ShopItem item1, ShopItem item2) {
-        return item1.quantityToString().compareTo(item2.quantityToString());
-    }*/
 
 
 
